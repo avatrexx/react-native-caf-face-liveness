@@ -1,0 +1,50 @@
+{
+  "name": "react-native-caf-face-liveness",
+  "version": "1.0.1",
+  "title": "React Native Caf Face Liveness",
+  "description": "TODO",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "README.md",
+    "android",
+    "index.js",
+    "ios",
+    "react-native-caf-face-liveness.podspec"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github_account/react-native-caf-face-liveness.git",
+    "baseUrl": "https://github.com/github_account/react-native-caf-face-liveness"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "CAF",
+    "email": "yourname@email.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.21",
+    "@types/react-native": "0.70.0",
+    "react": "^18.2.0",
+    "react-native": "^0.71.13",
+    "typescript": "^5.3.3"
+  },
+  "resolutions": {
+    "@types/react": "17.0.21"
+  }
+}
