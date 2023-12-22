@@ -15,11 +15,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/github_account/react-native-caf-face-liveness.git",
-    "baseUrl": "https://github.com/github_account/react-native-caf-face-liveness"
-  },
+  "repository": "https://github.com/HMDarkFir3/react-native-caf-face-liveness-1",
   "keywords": [
     "react-native"
   ],
