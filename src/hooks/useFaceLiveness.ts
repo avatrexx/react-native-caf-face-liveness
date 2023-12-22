@@ -25,33 +25,28 @@ const useFaceLiveness = (
   });
 
   const defaultOptions: FaceLivenessOptions = {
-    cafStage: StageType.PROD,
-    filter: FilterType.NATURAL,
-    setLoadingScreen: false,
-    setEnableScreenshots: false,
+    cafStage: options?.cafStage || StageType.PROD,
+    filter: options?.filter || FilterType.NATURAL,
+    setLoadingScreen: options?.setLoadingScreen || false,
+    setEnableScreenshots: options?.setEnableScreenshots || false,
   };
 
-  const formattedOptions = (options: FaceLivenessOptions): string => {
-    const responseOptions: FaceLivenessOptions = options || defaultOptions;
+  const formattedOptions = (): string => {
     const formatToJSON = JSON.stringify({
-      ...responseOptions,
+      ...defaultOptions,
       cafStage: isAndroid
-        ? StageType[responseOptions.cafStage!!]
-        : responseOptions.cafStage,
+        ? StageType[defaultOptions.cafStage!!]
+        : defaultOptions.cafStage,
       filter: isAndroid
-        ? FilterType[responseOptions.filter!!]
-        : responseOptions.filter,
+        ? FilterType[defaultOptions.filter!!]
+        : defaultOptions.filter,
     });
 
     return formatToJSON;
   };
 
   const startFaceLiveness = () =>
-    module.startFaceLiveness(
-      mobileToken,
-      peopleId,
-      formattedOptions(options!!)
-    );
+    module.startFaceLiveness(mobileToken, peopleId, formattedOptions());
 
   useEffect(() => {
     moduleEventEmitter.addListener("FaceLiveness_Success", (event) => {
@@ -106,7 +101,7 @@ const useFaceLiveness = (
       moduleEventEmitter.removeAllListeners("onFaceLivenessLoading");
       moduleEventEmitter.removeAllListeners("FaceLiveness_Loaded");
     };
-  }, [mobileToken]);
+  }, []);
 
   return {
     startFaceLiveness,

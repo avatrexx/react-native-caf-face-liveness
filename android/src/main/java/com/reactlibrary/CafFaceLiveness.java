@@ -44,11 +44,11 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
         FaceLivenessConfig formattedConfig = new FaceLivenessConfig(customConfig);
 
         FaceLiveness faceLiveness = new FaceLiveness.Builder(token)
-                .setStage(formattedConfig.cafStage)
-                .setFilter(formattedConfig.filter)
-                .setEnableScreenshots(formattedConfig.setEnableScreenshots)
-                .setLoadingScreen(formattedConfig.setLoadingScreen)
-                .build();
+            .setStage(formattedConfig.cafStage)
+            .setFilter(formattedConfig.filter)
+            .setEnableScreenshots(formattedConfig.setEnableScreenshots)
+            .setLoadingScreen(formattedConfig.setLoadingScreen)
+            .build();
 
         faceLiveness.startSDK(this.context, personId, new VerifyLivenessListener() {
             @Override
@@ -57,14 +57,13 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
                 writableMap.putString("data", faceLivenessResult.getSignedResponse());
 
                 getReactApplicationContext()
-                        .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("FaceLiveness_Success", writableMap);
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("FaceLiveness_Success", writableMap);
             }
 
             @Override
             public void onError(FaceLivenessResult faceLivenessResult) {
                 String message = "Error: " + faceLivenessResult.getErrorMessage();
-                ;
                 String type = "Error";
                 WritableMap writableMap = new WritableNativeMap();
                 SDKFailure sdkFailure = faceLivenessResult.getSdkFailure();
@@ -80,34 +79,29 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
                 writableMap.putString("type", type);
 
                 getReactApplicationContext()
-                        .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("FaceLiveness_Error", writableMap);
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("FaceLiveness_Error", writableMap);
             }
 
             @Override
             public void onCancel(FaceLivenessResult faceLivenessResult) {
-                WritableMap writableMap = new WritableNativeMap();
                 getReactApplicationContext()
-                        .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("FaceLiveness_Cancel", writableMap);
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("FaceLiveness_Cancel", true);
             }
 
             @Override
             public void onLoading() {
-                WritableMap writableMap = new WritableNativeMap();
-
                 getReactApplicationContext()
-                        .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("FaceLiveness_Loading", writableMap);
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("FaceLiveness_Loading", true);
             }
 
             @Override
             public void onLoaded() {
-                WritableMap writableMap = new WritableNativeMap();
-
                 getReactApplicationContext()
-                        .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                        .emit("FaceLiveness_Loaded", writableMap);
+                    .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                    .emit("FaceLiveness_Loaded", true);
             }
         });
     }
