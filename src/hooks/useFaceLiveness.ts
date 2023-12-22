@@ -2,12 +2,17 @@ import { useState, useEffect } from "react";
 
 import { module, moduleEventEmitter } from "../module";
 
-import { FaceLivenessProps, FaceLivenessResponse } from "../types";
+import {
+  FaceLivenessOptions,
+  FaceLivenessResponse,
+  StageType,
+  FilterType,
+} from "../types";
 
 const useFaceLiveness = (
   mobileToken: string,
   peopleId: string,
-  options?: FaceLivenessProps
+  options?: FaceLivenessOptions
 ) => {
   const [response, setResponse] = useState<FaceLivenessResponse>({
     result: null,
@@ -16,8 +21,28 @@ const useFaceLiveness = (
     isLoading: false,
   });
 
+  const defaultOptions: FaceLivenessOptions = {
+    cafStage: StageType.PROD,
+    filter: FilterType.NATURAL,
+    setLoadingScreen: false,
+    setEnableScreenshots: false,
+  };
+
+  const formattedOptions = (options: FaceLivenessOptions): string => {
+    const responseOptions: FaceLivenessOptions = options || defaultOptions;
+    const formatToJSON = JSON.stringify({
+      ...responseOptions,
+    });
+
+    return formatToJSON;
+  };
+
   const startFaceLiveness = () =>
-    module.startFaceLiveness(mobileToken, peopleId, options);
+    module.startFaceLiveness(
+      mobileToken,
+      peopleId,
+      formattedOptions(options!!)
+    );
 
   useEffect(() => {
     moduleEventEmitter.addListener("FaceLiveness_Success", (event) => {
@@ -64,15 +89,23 @@ const useFaceLiveness = (
         isLoading: !event,
       });
     });
+
+    return () => {
+      moduleEventEmitter.removeAllListeners("FaceLiveness_Success");
+      moduleEventEmitter.removeAllListeners("FaceLiveness_Error");
+      moduleEventEmitter.removeAllListeners("FaceLiveness_Cancel");
+      moduleEventEmitter.removeAllListeners("onFaceLivenessLoading");
+      moduleEventEmitter.removeAllListeners("FaceLiveness_Loaded");
+    };
   }, [mobileToken]);
 
-  return [
+  return {
     startFaceLiveness,
-    response.result,
-    response.error,
-    response.cancelled,
-    response.isLoading,
-  ];
+    result: response.result,
+    error: response.error,
+    cancelled: response.cancelled,
+    isLoading: response.isLoading,
+  };
 };
 
 export { useFaceLiveness };

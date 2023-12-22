@@ -5,10 +5,19 @@ export interface FaceLivenessResponse {
   isLoading: boolean;
 }
 
-export interface FaceLivenessProps {
-  stage?: StageType;
+export interface FaceLivenessOptions {
+  cafStage?: StageType;
   filter?: FilterType;
+  setEnableScreenshots: boolean;
+  setLoadingScreen: boolean;
 }
 
-export type StageType = "PROD" | "BETA" | "DEV";
-export type FilterType = "NATURAL" | "LINE_DRAWING";
+export enum StageType {
+  "PROD",
+  "BETA",
+  "DEV",
+}
+export enum FilterType {
+  "NATURAL",
+  "LINE_DRAWING",
+}

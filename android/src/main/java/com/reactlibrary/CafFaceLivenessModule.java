@@ -1,29 +1,32 @@
-// CafFaceLivenessModule.java
-
 package com.reactlibrary;
+
+import android.content.Intent;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.Callback;
 
-public class CafFaceLivenessModule extends ReactContextBaseJavaModule {
+import javax.annotation.Nonnull;
 
-    private final ReactApplicationContext reactContext;
-
-    public CafFaceLivenessModule(ReactApplicationContext reactContext) {
-        super(reactContext);
-        this.reactContext = reactContext;
-    }
-
+public class CafFaceLiveness extends ReactContextBaseJavaModule {
+    private Intent intent;
+    @Nonnull
     @Override
     public String getName() {
         return "CafFaceLiveness";
     }
 
+    CafFaceLiveness(ReactApplicationContext reactContext) {
+        super(reactContext);
+        intent = new Intent(getReactApplicationContext(), CafFaceLivenessActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
     @ReactMethod
-    public void sampleMethod(String stringArgument, int numberArgument, Callback callback) {
-        // TODO: Implement some actually useful functionality
-        callback.invoke("Received numberArgument: " + numberArgument + " stringArgument: " + stringArgument);
+    public void faceLiveness(String token, String personId, String config) {
+        intent.putExtra("token", token);
+        intent.putExtra("personId", personId);
+        intent.putExtra("config", config);
+        getReactApplicationContext().startActivity(intent);
     }
 }
