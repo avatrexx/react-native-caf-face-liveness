@@ -9,8 +9,6 @@ const useFaceLiveness = (
   peopleId: string,
   options?: FaceLivenessOptions
 ) => {
-  console.log("options", options);
-
   const [response, setResponse] = useState<FaceLivenessResponse>({
     result: null,
     error: null,
@@ -25,24 +23,16 @@ const useFaceLiveness = (
     setEnableScreenshots: options?.setEnableScreenshots || false,
   };
 
-  console.log("defaultOptions", defaultOptions);
-
-  const formattedOptions = (options: FaceLivenessOptions): string => {
+  const formattedOptions = (): string => {
     const formatToJSON = JSON.stringify({
-      ...options,
+      ...defaultOptions,
     });
-
-    console.log("formattedOptions", formatToJSON);
 
     return formatToJSON;
   };
 
   const startFaceLiveness = () =>
-    module.startFaceLiveness(
-      mobileToken,
-      peopleId,
-      formattedOptions(defaultOptions)
-    );
+    module.startFaceLiveness(mobileToken, peopleId, formattedOptions());
 
   useEffect(() => {
     moduleEventEmitter.addListener("FaceLiveness_Success", (event) => {
