@@ -1,7 +1,7 @@
 export interface FaceLivenessResponse {
   result: string | null;
   error: string | null;
-  cancelled: string | null;
+  cancelled: boolean;
   isLoading: boolean;
 }
 

@@ -17,10 +17,12 @@ const useFaceLiveness = (
   peopleId: string,
   options?: FaceLivenessOptions
 ) => {
+  console.log("options", options);
+
   const [response, setResponse] = useState<FaceLivenessResponse>({
     result: null,
     error: null,
-    cancelled: null,
+    cancelled: false,
     isLoading: false,
   });
 
@@ -42,6 +44,8 @@ const useFaceLiveness = (
         : defaultOptions.filter,
     });
 
+    console.log("formattedOptions", formatToJSON);
+
     return formatToJSON;
   };
 
@@ -53,7 +57,7 @@ const useFaceLiveness = (
       setResponse({
         result: event,
         error: null,
-        cancelled: null,
+        cancelled: false,
         isLoading: false,
       });
     });
@@ -62,7 +66,7 @@ const useFaceLiveness = (
       setResponse({
         result: null,
         error: event,
-        cancelled: null,
+        cancelled: false,
         isLoading: false,
       });
     });
@@ -76,11 +80,11 @@ const useFaceLiveness = (
       });
     });
 
-    moduleEventEmitter.addListener("onFaceLivenessLoading", (event) => {
+    moduleEventEmitter.addListener("FaceLiveness_Loading", (event) => {
       setResponse({
         result: null,
         error: null,
-        cancelled: null,
+        cancelled: false,
         isLoading: event,
       });
     });
@@ -89,7 +93,7 @@ const useFaceLiveness = (
       setResponse({
         result: null,
         error: null,
-        cancelled: null,
+        cancelled: false,
         isLoading: !event,
       });
     });
@@ -98,7 +102,7 @@ const useFaceLiveness = (
       moduleEventEmitter.removeAllListeners("FaceLiveness_Success");
       moduleEventEmitter.removeAllListeners("FaceLiveness_Error");
       moduleEventEmitter.removeAllListeners("FaceLiveness_Cancel");
-      moduleEventEmitter.removeAllListeners("onFaceLivenessLoading");
+      moduleEventEmitter.removeAllListeners("FaceLiveness_Loading");
       moduleEventEmitter.removeAllListeners("FaceLiveness_Loaded");
     };
   }, []);
