@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Platform } from "react-native";
 
 import { module, moduleEventEmitter } from "../module";
 
@@ -8,6 +9,8 @@ import {
   StageType,
   FilterType,
 } from "../types";
+
+const isAndroid = Platform.OS === "android";
 
 const useFaceLiveness = (
   mobileToken: string,
@@ -32,6 +35,12 @@ const useFaceLiveness = (
     const responseOptions: FaceLivenessOptions = options || defaultOptions;
     const formatToJSON = JSON.stringify({
       ...responseOptions,
+      cafStage: isAndroid
+        ? StageType[responseOptions.cafStage!!]
+        : responseOptions.cafStage,
+      filter: isAndroid
+        ? FilterType[responseOptions.filter!!]
+        : responseOptions.filter,
     });
 
     return formatToJSON;

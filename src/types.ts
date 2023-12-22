@@ -13,11 +13,11 @@ export interface FaceLivenessOptions {
 }
 
 export enum StageType {
-  PROD,
   BETA,
+  PROD,
   DEV,
 }
 export enum FilterType {
-  NATURAL,
   LINE_DRAWING,
+  NATURAL,
 }
