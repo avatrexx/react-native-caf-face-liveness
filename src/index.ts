@@ -4,4 +4,5 @@ export {
   FaceLivenessOptions,
   StageType,
   FilterType,
+  TimeType,
 } from "./types";

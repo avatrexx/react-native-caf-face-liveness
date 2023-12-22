@@ -19,8 +19,9 @@ const useFaceLiveness = (
   const defaultOptions: FaceLivenessOptions = {
     cafStage: options?.cafStage || "PROD",
     filter: options?.filter || "NATURAL",
-    setLoadingScreen: options?.setLoadingScreen || false,
-    setEnableScreenshots: options?.setEnableScreenshots || false,
+    imageUrlExpirationTime: options?.imageUrlExpirationTime || null,
+    loadingScreen: options?.loadingScreen || false,
+    enableScreenshots: options?.enableScreenshots || false,
   };
 
   const formattedOptions = (): string => {

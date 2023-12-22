@@ -2,6 +2,7 @@ package com.reactlibrary;
 
 import com.caf.facelivenessiproov.input.CAFStage;
 import com.caf.facelivenessiproov.input.iproov.Filter;
+import com.caf.facelivenessiproov.input.Time;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,8 +12,9 @@ import java.io.Serializable;
 public class FaceLivenessConfig implements Serializable {
     public CAFStage cafStage;
     public Filter filter;
-    public boolean setEnableScreenshots;
-    public boolean setLoadingScreen;
+    public Time imageUrlExpirationTime;
+    public boolean enableScreenshots;
+    public boolean loadingScreen;
 
 
     public  FaceLivenessConfig(String jsonString) throws JSONException {
@@ -20,7 +22,8 @@ public class FaceLivenessConfig implements Serializable {
 
         this.cafStage = CAFStage.valueOf(jsonObject.getString("cafStage"));
         this.filter = Filter.valueOf(jsonObject.getString("filter"));
-        this.setEnableScreenshots = jsonObject.getBoolean("setEnableScreenshots");
-        this.setLoadingScreen = jsonObject.getBoolean("setLoadingScreen");
+        this.imageUrlExpirationTime = Time.valueOf(jsonObject.getString("imageUrlExpirationTime"));
+        this.enableScreenshots = jsonObject.getBoolean("enableScreenshots");
+        this.loadingScreen = jsonObject.getBoolean("loadingScreen");
     }
 }

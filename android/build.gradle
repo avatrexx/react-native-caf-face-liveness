@@ -80,14 +80,6 @@ android {
     targetCompatibility JavaVersion.VERSION_1_8
   }
 
-  aaptOptions {
-    noCompress "tflite"
-  }
-
-  dataBinding {
-    enabled = true
-  }
-
   rootProject.allprojects {
     repositories {
       maven { url "https://repo.combateafraude.com/android/release" }

@@ -5964,10 +5964,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-caf-face-liveness-1@^1.1.26:
-  version "1.1.26"
-  resolved "https://registry.yarnpkg.com/react-native-caf-face-liveness-1/-/react-native-caf-face-liveness-1-1.1.26.tgz#1a638f67132de1bd71b8b8bdcaaccb1566fcb804"
-  integrity sha512-PYrWb/rWNMoxJ2Nb0gInVKgxspOscELpHlFCtCx+PButxQTX1R5c1gNCCjRpA/7BXBoNziv54FCb5EyvV2xRiw==
+react-native-caf-face-liveness-1@^1.1.27:
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/react-native-caf-face-liveness-1/-/react-native-caf-face-liveness-1-1.1.27.tgz#f7479084c0a3ff1ebc0463e37f478144a3e13820"
+  integrity sha512-POFPraQPhGCO0Kk41MJw3B4rC8xu6MfTGBQ7fJcdiGLB2vas9lipkHvSappvkKvXbljCqwRC22XwBRLYPZkyhg==
 
 react-native@0.72.1:
   version "0.72.1"
