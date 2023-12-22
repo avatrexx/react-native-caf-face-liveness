@@ -37,8 +37,19 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
         return "CafFaceLiveness";
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        try {
+            this.startFaceLiveness();
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @ReactMethod
-    public void startFaceLiveness(String token, String personId, String config) {
+    public void startFaceLiveness(String token, String personId, String config) throws JSONException {
         customConfig = config;
 
         FaceLivenessConfig formattedConfig = new FaceLivenessConfig(customConfig);
