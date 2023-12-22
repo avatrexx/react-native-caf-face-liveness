@@ -11,8 +11,8 @@ const App = () => {
   const { startFaceLiveness, error } = useFaceLiveness(mobileToken, peopleId, {
     cafStage: "PROD",
     filter: "NATURAL",
-    setLoadingScreen: true,
-    setEnableScreenshots: false,
+    enableScreenshots: true,
+    loadingScreen: true,
   });
 
   console.log(error);

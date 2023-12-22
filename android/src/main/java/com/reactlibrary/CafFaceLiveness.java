@@ -48,7 +48,7 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
             .setFilter(formattedConfig.filter)
             .setEnableScreenshots(formattedConfig.enableScreenshots)
             .setLoadingScreen(formattedConfig.loadingScreen)
-            .setImageUrlExpirationTime(formattedConfig.imageUrlExpirationTime)
+            formattedConfig.imageUrlExpirationTime !== null && .setImageUrlExpirationTime(formattedConfig.imageUrlExpirationTime);
             .build();
 
         faceLiveness.startSDK(this.context, personId, new VerifyLivenessListener() {
