@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CafPackage implements ReactPackage {
+public class CafFaceLivenessPackage implements ReactPackage {
     @NotNull
     @Override
     public List<ViewManager> createViewManagers(@NotNull ReactApplicationContext reactContext) {
