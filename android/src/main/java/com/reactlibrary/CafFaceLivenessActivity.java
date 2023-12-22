@@ -34,13 +34,13 @@ public class CafFaceLivenessActivity extends ReactActivity {
         customConfig = intent.getStringExtra("config");
 
         try {
-            this.startFaceLiveness();
+            this.faceLiveness();
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void startFaceLiveness() throws JSONException {
+    private void faceLiveness() throws JSONException {
         FaceLivenessConfig config = new FaceLivenessConfig(customConfig);
 
         FaceLiveness faceLiveness = new FaceLiveness.Builder(token)

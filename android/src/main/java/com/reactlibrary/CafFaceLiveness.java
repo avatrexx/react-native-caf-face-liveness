@@ -23,7 +23,7 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void faceLiveness(String token, String personId, String config) {
+    public void startFaceLiveness(String token, String personId, String config) {
         intent.putExtra("token", token);
         intent.putExtra("personId", personId);
         intent.putExtra("config", config);
