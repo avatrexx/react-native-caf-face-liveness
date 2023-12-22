@@ -12,18 +12,21 @@ import com.caf.facelivenessiproov.output.failure.NetworkReason;
 import com.caf.facelivenessiproov.output.failure.SDKFailure;
 import com.caf.facelivenessiproov.output.failure.ServerReason;
 
-import com.facebook.react.bridge.*;
+import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+
 
 import org.json.JSONException;
 
 public class CafFaceLiveness extends ReactContextBaseJavaModule {
-    private Context context;
     private String customConfig;
 
     CafFaceLiveness(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.context = reactContext;
     }
 
     @Nonnull
@@ -45,7 +48,7 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
                 .setLoadingScreen(formattedConfig.setLoadingScreen)
                 .build();
 
-        faceLiveness.startSDK(this.context, personId, new VerifyLivenessListener() {
+        faceLiveness.startSDK(this, personId, new VerifyLivenessListener() {
             @Override
             public void onSuccess(FaceLivenessResult faceLivenessResult) {
                 WritableMap writableMap = new WritableNativeMap();
