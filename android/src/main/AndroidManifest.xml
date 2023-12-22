@@ -1,6 +1,5 @@
 <!-- AndroidManifest.xml -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.reactlibrary">
-
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.reactlibrary">
+  <activity android:name=".CafFaceLivenessActivity" android:label="CafFaceLivenessActivity"></activity>
 </manifest>
