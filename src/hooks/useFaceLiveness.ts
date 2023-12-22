@@ -33,15 +33,13 @@ const useFaceLiveness = (
     setEnableScreenshots: options?.setEnableScreenshots || false,
   };
 
-  const formattedOptions = (): string => {
+  console.log("defaultOptions", defaultOptions);
+
+  const formattedOptions = (options: FaceLivenessOptions): string => {
     const formatToJSON = JSON.stringify({
-      ...defaultOptions,
-      cafStage: isAndroid
-        ? StageType[defaultOptions.cafStage!!]
-        : defaultOptions.cafStage,
-      filter: isAndroid
-        ? FilterType[defaultOptions.filter!!]
-        : defaultOptions.filter,
+      ...options,
+      cafStage: isAndroid ? StageType[options.cafStage!!] : options.cafStage,
+      filter: isAndroid ? FilterType[options.filter!!] : options.filter,
     });
 
     console.log("formattedOptions", formatToJSON);
@@ -50,7 +48,11 @@ const useFaceLiveness = (
   };
 
   const startFaceLiveness = () =>
-    module.startFaceLiveness(mobileToken, peopleId, formattedOptions());
+    module.startFaceLiveness(
+      mobileToken,
+      peopleId,
+      formattedOptions(defaultOptions)
+    );
 
   useEffect(() => {
     moduleEventEmitter.addListener("FaceLiveness_Success", (event) => {

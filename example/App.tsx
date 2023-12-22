@@ -14,12 +14,7 @@ const App = () => {
   const peopleId = "43485449806";
 
   const { startFaceLiveness, result, cancelled, error, isLoading } =
-    useFaceLiveness(mobileToken, peopleId, {});
-
-  console.log("result", result);
-  console.log("cancelled", cancelled);
-  console.log("error", error);
-  console.log("isLoading", isLoading);
+    useFaceLiveness(mobileToken, peopleId, { cafStage: StageType.BETA });
 
   return (
     <View style={styles.container}>
