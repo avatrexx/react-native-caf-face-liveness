@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "react-native-iproov-lib-test": ["./src/index"]
+      "react-native-caf-face-liveness-1": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -23,6 +24,9 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "verbatimModuleSyntax": false
-  }
+    "verbatimModuleSyntax": false,
+    
+  },
+  "exclude": ["example"],
+  "include": ["src"]
 }

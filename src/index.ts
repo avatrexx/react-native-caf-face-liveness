@@ -1,3 +1,1 @@
-import { useFaceLiveness } from "./hooks/useFaceLiveness";
-
-export { useFaceLiveness };
+export { useFaceLiveness } from "./hooks/useFaceLiveness";

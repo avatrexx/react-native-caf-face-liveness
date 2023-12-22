@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, Text } from "react-native";
+import { View, Button } from "react-native";
 
 import { useFaceLiveness } from "react-native-caf-face-liveness-1";
 
@@ -17,4 +17,4 @@ const App = () => {
   );
 };
 
-export { App };
+export default App;
