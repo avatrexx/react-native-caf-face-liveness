@@ -23,7 +23,7 @@ public class CafFaceLivenessPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(@NotNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new CafFaceLiveness(reactContext));
+        modules.add(new CafFaceLivenessModule(reactContext));
 
         return modules;
     }

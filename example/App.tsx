@@ -1,18 +1,18 @@
 import React from "react";
 import { View, Button, Text } from "react-native";
 
-// import {} from "react-native-caf-face-liveness-1";
+import { useFaceLiveness } from "react-native-caf-face-liveness-1";
 
 const App = () => {
   const mobileToken =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTRjZmFlMWM5YTM0NTAwMDg4YzIwODUifQ.maH9fynasnaRR2Hm5PxQ1XzLxlVZiZSvpVDD9zVtfgs";
   const peopleId = "43485449806";
 
-  // const { startFaceLiveness } = useFaceLiveness(mobileToken, peopleId);
+  const { startFaceLiveness } = useFaceLiveness(mobileToken, peopleId);
 
   return (
     <View>
-      <Text>Teste</Text>
+      <Button title="teste" onPress={startFaceLiveness} />
     </View>
   );
 };
