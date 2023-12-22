@@ -5,15 +5,9 @@ export interface FaceLivenessResponse {
   isLoading: boolean;
 }
 
-export enum StageType {
-  BETA,
-  PROD,
-  DEV,
-}
-export enum FilterType {
-  LINE_DRAWING,
-  NATURAL,
-}
+export type StageType = "BETA" | "PROD" | "DEV";
+
+export type FilterType = "LINE_DRAWING" | "NATURAL";
 
 export interface FaceLivenessOptions {
   cafStage?: StageType;

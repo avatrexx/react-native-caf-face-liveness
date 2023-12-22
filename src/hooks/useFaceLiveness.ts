@@ -1,16 +1,8 @@
 import { useState, useEffect } from "react";
-import { Platform } from "react-native";
 
 import { module, moduleEventEmitter } from "../module";
 
-import {
-  FaceLivenessOptions,
-  FaceLivenessResponse,
-  StageType,
-  FilterType,
-} from "../types";
-
-const isAndroid = Platform.OS === "android";
+import { FaceLivenessOptions, FaceLivenessResponse } from "../types";
 
 const useFaceLiveness = (
   mobileToken: string,
@@ -27,8 +19,8 @@ const useFaceLiveness = (
   });
 
   const defaultOptions: FaceLivenessOptions = {
-    cafStage: options?.cafStage || StageType.PROD,
-    filter: options?.filter || FilterType.NATURAL,
+    cafStage: options?.cafStage || "PROD",
+    filter: options?.filter || "NATURAL",
     setLoadingScreen: options?.setLoadingScreen || false,
     setEnableScreenshots: options?.setEnableScreenshots || false,
   };
@@ -38,8 +30,6 @@ const useFaceLiveness = (
   const formattedOptions = (options: FaceLivenessOptions): string => {
     const formatToJSON = JSON.stringify({
       ...options,
-      cafStage: isAndroid ? StageType[options.cafStage!!] : options.cafStage,
-      filter: isAndroid ? FilterType[options.filter!!] : options.filter,
     });
 
     console.log("formattedOptions", formatToJSON);
