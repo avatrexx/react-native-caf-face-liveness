@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button } from "react-native";
+import { View, Button, StyleSheet } from "react-native";
 
 import { useFaceLiveness } from "react-native-caf-face-liveness-1";
 
@@ -11,10 +11,18 @@ const App = () => {
   const { startFaceLiveness } = useFaceLiveness(mobileToken, peopleId);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Button title="teste" onPress={startFaceLiveness} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
 
 export default App;
