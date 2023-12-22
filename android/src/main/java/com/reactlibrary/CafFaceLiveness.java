@@ -1,5 +1,10 @@
 package com.reactlibrary;
 
+import android.content.Context;
+import android.os.Bundle;
+
+import javax.annotation.Nonnull;
+
 import com.caf.facelivenessiproov.input.FaceLiveness;
 import com.caf.facelivenessiproov.input.VerifyLivenessListener;
 import com.caf.facelivenessiproov.output.FaceLivenessResult;
@@ -7,14 +12,10 @@ import com.caf.facelivenessiproov.output.failure.NetworkReason;
 import com.caf.facelivenessiproov.output.failure.SDKFailure;
 import com.caf.facelivenessiproov.output.failure.ServerReason;
 
-import com.facebook.react.ReactActivity;
-import com.facebook.react.bridge.WritableMap;
-import com.facebook.react.bridge.WritableNativeMap;
+import com.facebook.react.bridge.*;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import org.json.JSONException;
-
-import javax.annotation.Nonnull;
 
 public class CafFaceLiveness extends ReactContextBaseJavaModule {
     private Context context;
