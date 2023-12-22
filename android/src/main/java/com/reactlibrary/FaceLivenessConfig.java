@@ -18,8 +18,8 @@ public class FaceLivenessConfig implements Serializable {
     public  FaceLivenessConfig(String jsonString) throws JSONException {
         JSONObject jsonObject = new JSONObject(jsonString);
 
-        this.cafStage = jsonObject.getString("cafStage"));
-        this.filter = jsonObject.getString("filter"));
+        this.cafStage = jsonObject.getString("cafStage");
+        this.filter = jsonObject.getString("filter");
         this.setEnableScreenshots = jsonObject.getBoolean("setEnableScreenshots");
         this.setLoadingScreen = jsonObject.getBoolean("setLoadingScreen");
     }
