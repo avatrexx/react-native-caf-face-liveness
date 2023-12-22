@@ -54,10 +54,9 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
                 WritableMap writableMap = new WritableNativeMap();
                 writableMap.putString("data", faceLivenessResult.getSignedResponse());
 
-                getReactInstanceManager().getCurrentReactContext()
+                getReactApplicationContext().getCurrentReactContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("FaceLiveness_Success", writableMap);
-                finish();
             }
 
             @Override
@@ -78,26 +77,24 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
                 writableMap.putString("message", message);
                 writableMap.putString("type", type);
 
-                getReactInstanceManager().getCurrentReactContext()
+                getReactApplicationContext().getCurrentReactContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("FaceLiveness_Error", writableMap);
-                finish();
             }
 
             @Override
             public void onCancel(FaceLivenessResult faceLivenessResult) {
                 WritableMap writableMap = new WritableNativeMap();
-                getReactInstanceManager().getCurrentReactContext()
+                getReactApplicationContext().getCurrentReactContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("FaceLiveness_Cancel", writableMap);
-                finish();
             }
 
             @Override
             public void onLoading() {
                 WritableMap writableMap = new WritableNativeMap();
 
-                getReactInstanceManager().getCurrentReactContext()
+                getReactApplicationContext().getCurrentReactContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("FaceLiveness_Loading", writableMap);
             }
@@ -106,7 +103,7 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
             public void onLoaded() {
                 WritableMap writableMap = new WritableNativeMap();
 
-                getReactInstanceManager().getCurrentReactContext()
+                getReactApplicationContext().getCurrentReactContext()
                         .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                         .emit("FaceLiveness_Loaded", writableMap);
             }
