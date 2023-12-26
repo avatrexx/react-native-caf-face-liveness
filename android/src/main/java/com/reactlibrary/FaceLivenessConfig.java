@@ -22,7 +22,7 @@ public class FaceLivenessConfig implements Serializable {
 
         this.cafStage = CAFStage.valueOf(jsonObject.getString("cafStage"));
         this.filter = Filter.valueOf(jsonObject.getString("filter"));
-        this.imageUrlExpirationTime = jsonObject.get("imageUrlExpirationTime") == null ? null : Time.valueOf(jsonObject.getString("imageUrlExpirationTime"));
+        this.imageUrlExpirationTime = jsonObject.isNull("imageUrlExpirationTime") ? null : Time.valueOf(jsonObject.getString("imageUrlExpirationTime"));
         this.enableScreenshots = jsonObject.getBoolean("enableScreenshots");
         this.loadingScreen = jsonObject.getBoolean("loadingScreen");
     }

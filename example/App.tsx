@@ -13,6 +13,7 @@ const App = () => {
     filter: "NATURAL",
     enableScreenshots: true,
     loadingScreen: true,
+    imageUrlExpirationTime: "THIRTY_DAYS",
   });
 
   console.log(error);
