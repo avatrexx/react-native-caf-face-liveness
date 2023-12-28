@@ -13,14 +13,17 @@ const App = () => {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTRjZmFlMWM5YTM0NTAwMDg4YzIwODUifQ.maH9fynasnaRR2Hm5PxQ1XzLxlVZiZSvpVDD9zVtfgs";
   const peopleId = "47496803898";
 
-  const { startFaceLiveness } = useFaceLiveness(mobileToken, peopleId, {
+  const { startFaceLiveness, result, error, cancelled, isLoading} = useFaceLiveness(mobileToken, peopleId, {
     cafStage: StageType.PROD,
-    filter: FilterType.NATURAL,
+    filter: FilterType.LINE_DRAWING,
     imageUrlExpirationTime: TimeType.THREE_HOURS,
     enableScreenshots: false,
-    loadingScreen: false,
+    loadingScreen: true,
   });
-
+console.log("result ",result)
+console.log("error ",error)
+console.log("canceled ",cancelled)
+console.log("loading ",isLoading)
   return (
     <View style={styles.container}>
       <Button title="teste" onPress={startFaceLiveness} />

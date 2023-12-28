@@ -76,7 +76,7 @@ class CafFaceLiveness: RCTEventEmitter, FaceLivenessDelegate {
   }
   
   func didFinishWithCancelled(with faceLivenessResult: FaceLiveness.FaceLivenessResult) {
-    sendEvent(withName: "FaceLiveness_Cancel", body: nil)
+    sendEvent(withName: "FaceLiveness_Cancel", body: true)
   }
   
   func didFinishWithError(with faceLivenessErrorResult: FaceLiveness.FaceLivenessErrorResult) {
