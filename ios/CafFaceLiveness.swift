@@ -24,12 +24,13 @@ class CafFaceLiveness: RCTEventEmitter, FaceLivenessDelegate {
     var filter = Filter.lineDrawing;
     var cafStage = FaceLiveness.CAFStage.PROD
     var setLoadingScreen:Bool? = nil;
+    var setExpiringTime:FaceLiveness.Time? = .threeHours;
     
     if let data = config.data(using: .utf8) {
       configDictionary = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
     }
     
-    if let loadingScreen = configDictionary?["setLoadingScreen"] as? Bool {
+    if let loadingScreen = configDictionary?["loadingScreen"] as? Bool {
       setLoadingScreen = loadingScreen
     }
     
@@ -40,12 +41,16 @@ class CafFaceLiveness: RCTEventEmitter, FaceLivenessDelegate {
     if let cafStageValue = configDictionary?["cafStage"] as? Int, let newCafStage = FaceLiveness.CAFStage(rawValue: cafStageValue) {
       cafStage = newCafStage
     }
+    if let expiringTime = configDictionary?["imageUrlExpirationTime"] as? String, let newImageUrlExpirationTime = FaceLiveness.Time(rawValue: expiringTime){
+      setExpiringTime = newImageUrlExpirationTime
+    }
     
     let faceLiveness = FaceLivenessSDK.Build()
         .setStage(stage: cafStage)
         .setFilter(filter: filter)
         .setLoadingScreen(withLoading: setLoadingScreen!)
         .setCredentials(mobileToken: token, personId: personId)
+        .setImageUrlExpirationTime(time: setExpiringTime!)
         .build()
         faceLiveness.delegate = self
 

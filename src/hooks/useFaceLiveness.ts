@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import { module, moduleEventEmitter } from "../module";
 
-import { FaceLivenessOptions, FaceLivenessResponse } from "../types";
+import { FaceLivenessOptions, FaceLivenessResponse, FilterType, StageType, TimeType } from "../types";
 
 const useFaceLiveness = (
   mobileToken: string,
@@ -17,12 +17,13 @@ const useFaceLiveness = (
   });
 
   const defaultOptions: FaceLivenessOptions = {
-    cafStage: options?.cafStage || "PROD",
-    filter: options?.filter || "NATURAL",
-    imageUrlExpirationTime: options?.imageUrlExpirationTime || null,
-    loadingScreen: options?.loadingScreen || false,
-    enableScreenshots: options?.enableScreenshots || false,
+    cafStage: options?.cafStage ?? StageType.PROD,
+    filter: options?.filter ?? FilterType.NATURAL,
+    imageUrlExpirationTime: options?.imageUrlExpirationTime ?? TimeType.THIRTY_MIN,
+    loadingScreen: options?.loadingScreen ?? false,
+    enableScreenshots: options?.enableScreenshots ?? false,
   };
+
 
   const formattedOptions = (): string => {
     const formatToJSON = JSON.stringify({
@@ -31,7 +32,7 @@ const useFaceLiveness = (
 
     return formatToJSON;
   };
-
+  console.log(formattedOptions)
   const startFaceLiveness = () =>
     module.startFaceLiveness(mobileToken, peopleId, formattedOptions());
 

@@ -1,22 +1,23 @@
 import React from "react";
 import { View, Button, StyleSheet } from "react-native";
 
-import { useFaceLiveness } from "react-native-caf-face-liveness-1";
+import { useFaceLiveness, FilterType, StageType, TimeType } from "react-native-caf-face-liveness";
 
 const App = () => {
   const mobileToken =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTRjZmFlMWM5YTM0NTAwMDg4YzIwODUifQ.maH9fynasnaRR2Hm5PxQ1XzLxlVZiZSvpVDD9zVtfgs";
-  const peopleId = "43485449806";
+  const peopleId = "47496803898";
 
-  const { startFaceLiveness, error } = useFaceLiveness(mobileToken, peopleId, {
-    cafStage: "PROD",
-    filter: "NATURAL",
+  const { startFaceLiveness, result, error } = useFaceLiveness(mobileToken, peopleId, {
+    cafStage: StageType.PROD,
+    filter: FilterType.NATURAL,
     enableScreenshots: true,
     loadingScreen: true,
-    imageUrlExpirationTime: "THIRTY_DAYS",
+    imageUrlExpirationTime: TimeType.THREE_HOURS,
   });
 
-  console.log(error);
+  console.log(result);
+  console.log(error)
 
   return (
     <View style={styles.container}>
