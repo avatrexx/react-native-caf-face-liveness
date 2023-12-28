@@ -10,10 +10,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "react": "18.2.0",
     "react-native": "0.72.1",
-    "react-native-caf-face-liveness": "^1.1.40"
+    "react-native-caf-face-liveness": "^1.1.42"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

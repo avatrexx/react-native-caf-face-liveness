@@ -1,8 +1,17 @@
 import { useState, useEffect } from "react";
+import { Platform } from "react-native";
+
+const isAndroid = Platform.OS === "android";
 
 import { module, moduleEventEmitter } from "../module";
 
-import { FaceLivenessOptions, FaceLivenessResponse, FilterType, StageType, TimeType } from "../types";
+import {
+  FaceLivenessOptions,
+  FaceLivenessResponse,
+  FilterType,
+  StageType,
+  TimeType,
+} from "../types";
 
 const useFaceLiveness = (
   mobileToken: string,
@@ -19,20 +28,29 @@ const useFaceLiveness = (
   const defaultOptions: FaceLivenessOptions = {
     cafStage: options?.cafStage ?? StageType.PROD,
     filter: options?.filter ?? FilterType.NATURAL,
-    imageUrlExpirationTime: options?.imageUrlExpirationTime ?? TimeType.THIRTY_MIN,
+    imageUrlExpirationTime:
+      options?.imageUrlExpirationTime ?? TimeType.THIRTY_MIN,
     loadingScreen: options?.loadingScreen ?? false,
     enableScreenshots: options?.enableScreenshots ?? false,
   };
 
-
   const formattedOptions = (): string => {
     const formatToJSON = JSON.stringify({
       ...defaultOptions,
+      filter: isAndroid
+        ? FilterType[defaultOptions.filter!]
+        : defaultOptions.filter,
+      cafStage: isAndroid
+        ? StageType[defaultOptions.cafStage!]
+        : defaultOptions.cafStage,
+      imageUrlExpirationTime: isAndroid
+        ? TimeType[defaultOptions.imageUrlExpirationTime!]
+        : defaultOptions.imageUrlExpirationTime,
     });
 
     return formatToJSON;
   };
-  console.log(formattedOptions)
+
   const startFaceLiveness = () =>
     module.startFaceLiveness(mobileToken, peopleId, formattedOptions());
 

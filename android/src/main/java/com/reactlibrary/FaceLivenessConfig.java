@@ -16,13 +16,12 @@ public class FaceLivenessConfig implements Serializable {
     public boolean enableScreenshots;
     public boolean loadingScreen;
 
-
     public  FaceLivenessConfig(String jsonString) throws JSONException {
         JSONObject jsonObject = new JSONObject(jsonString);
 
         this.cafStage = CAFStage.valueOf(jsonObject.getString("cafStage"));
         this.filter = Filter.valueOf(jsonObject.getString("filter"));
-        this.imageUrlExpirationTime = jsonObject.isNull("imageUrlExpirationTime") ? null : Time.valueOf(jsonObject.getString("imageUrlExpirationTime"));
+        this.imageUrlExpirationTime = Time.valueOf(jsonObject.getString("imageUrlExpirationTime"));
         this.enableScreenshots = jsonObject.getBoolean("enableScreenshots");
         this.loadingScreen = jsonObject.getBoolean("loadingScreen");
     }

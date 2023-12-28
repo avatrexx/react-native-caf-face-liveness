@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "react-native-caf-face-liveness-1": ["./src/index"]
+      "react-native-caf-face-liveness": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -26,7 +26,5 @@
     "target": "esnext",
     "verbatimModuleSyntax": false,
     
-  },
-  "exclude": ["example"],
-  "include": ["src"]
+  }
 }

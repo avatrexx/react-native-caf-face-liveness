@@ -5,11 +5,22 @@ export interface FaceLivenessResponse {
   isLoading: boolean;
 }
 
-export enum StageType {"BETA", "PROD", "DEV"};
+export enum StageType {
+  "BETA",
+  "PROD",
+  "DEV",
+}
 
-export enum FilterType {"LINE_DRAWING", "NATURAL"};
+export enum FilterType {
+  "LINE_DRAWING",
+  "NATURAL",
+}
 
-export enum TimeType {"THREE_HOURS", "THIRTY_DAYS", "THIRTY_MIN"};
+export enum TimeType {
+  "THREE_HOURS",
+  "THIRTY_DAYS",
+  "THIRTY_MIN",
+}
 
 export interface FaceLivenessOptions {
   cafStage?: StageType;

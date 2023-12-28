@@ -42,7 +42,7 @@ public class CafFaceLiveness extends ReactContextBaseJavaModule {
         customConfig = config;
 
         FaceLivenessConfig formattedConfig = new FaceLivenessConfig(customConfig);
-
+        
         FaceLiveness faceLiveness = new FaceLiveness.Builder(token)
             .setStage(formattedConfig.cafStage)
             .setFilter(formattedConfig.filter)
