@@ -10,8 +10,8 @@ import {
 
 const App = () => {
   const mobileToken =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2NTRjZmFlMWM5YTM0NTAwMDg4YzIwODUifQ.maH9fynasnaRR2Hm5PxQ1XzLxlVZiZSvpVDD9zVtfgs";
-  const peopleId = "47496803898";
+    "";
+  const peopleId = "";
 
   const { startFaceLiveness, result, error, cancelled, isLoading} = useFaceLiveness(mobileToken, peopleId, {
     cafStage: StageType.PROD,
