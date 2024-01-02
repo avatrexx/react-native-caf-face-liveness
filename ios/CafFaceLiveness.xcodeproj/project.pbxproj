@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16D6BB822B44C6BC00A46D2F /* CafFaceLiveness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */; };
+		16D6BB832B44C6BC00A46D2F /* CafFaceLiveness.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */; };
 		ADE79CBEB68918CF9DA6A1A2 /* Pods_CafFaceLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AA0B3CB13F1B5B4123CEDF /* Pods_CafFaceLiveness.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		0D8BD9FE572872782E77893B /* Pods-CafFaceLiveness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafFaceLiveness.release.xcconfig"; path = "Target Support Files/Pods-CafFaceLiveness/Pods-CafFaceLiveness.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libCafFaceLiveness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCafFaceLiveness.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		16D6BB7E2B44C6BC00A46D2F /* react-native-caf-face-liveness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "react-native-caf-face-liveness-Bridging-Header.h"; sourceTree = "<group>"; };
+		16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafFaceLiveness.swift; sourceTree = "<group>"; };
+		16D6BB802B44C6BC00A46D2F /* CafFaceLiveness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafFaceLiveness.h; sourceTree = "<group>"; };
+		16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafFaceLiveness.m; sourceTree = "<group>"; };
 		80AA0B3CB13F1B5B4123CEDF /* Pods_CafFaceLiveness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafFaceLiveness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEEF15181D1C283269D0CE9 /* Pods-CafFaceLiveness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafFaceLiveness.debug.xcconfig"; path = "Target Support Files/Pods-CafFaceLiveness/Pods-CafFaceLiveness.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,9 +66,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				16D6BB802B44C6BC00A46D2F /* CafFaceLiveness.h */,
+				16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */,
+				16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				FC0CD211591CA6EE9247D0DD /* Pods */,
 				1BE8BBC9B5B061514E43FD62 /* Frameworks */,
+				16D6BB7E2B44C6BC00A46D2F /* react-native-caf-face-liveness-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +117,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -210,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -262,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -307,6 +318,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+                IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
