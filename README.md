@@ -82,7 +82,7 @@ This hook provides `startFaceLiveness` method that start face liveness and your 
 | ----------- | ----------------------- | ------------ | ------------------------------------------------- |
 | mobileToken | string                  | **Required** | Usage token associated with your Identity account |
 | peopleId    | string                  | **Required** | User CPF                                          |
-| options     | [FaceLivenessOptions](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#facelivenessoptions) | Optional     | Settings for the liveness                         |
+| options     | [FaceLivenessOptions](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#facelivenessoptions) | Optional     | Settings for the face liveness                         |
 
 ### Methods
 
