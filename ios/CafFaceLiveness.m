@@ -5,8 +5,6 @@
 //  Created by Lorena Zanferrari on 20/11/23.
 //
 
-#import <Foundation/Foundation.h>
-
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 

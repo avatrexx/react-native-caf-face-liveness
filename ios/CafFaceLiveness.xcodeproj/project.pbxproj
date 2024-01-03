@@ -6,12 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		16D6BB822B44C6BC00A46D2F /* CafFaceLiveness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */; };
-		16D6BB832B44C6BC00A46D2F /* CafFaceLiveness.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */; };
-		ADE79CBEB68918CF9DA6A1A2 /* Pods_CafFaceLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80AA0B3CB13F1B5B4123CEDF /* Pods_CafFaceLiveness.framework */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -25,14 +19,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0D8BD9FE572872782E77893B /* Pods-CafFaceLiveness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafFaceLiveness.release.xcconfig"; path = "Target Support Files/Pods-CafFaceLiveness/Pods-CafFaceLiveness.release.xcconfig"; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libCafFaceLiveness.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCafFaceLiveness.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		16D6BB7E2B44C6BC00A46D2F /* react-native-caf-face-liveness-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "react-native-caf-face-liveness-Bridging-Header.h"; sourceTree = "<group>"; };
-		16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafFaceLiveness.swift; sourceTree = "<group>"; };
-		16D6BB802B44C6BC00A46D2F /* CafFaceLiveness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafFaceLiveness.h; sourceTree = "<group>"; };
-		16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafFaceLiveness.m; sourceTree = "<group>"; };
-		80AA0B3CB13F1B5B4123CEDF /* Pods_CafFaceLiveness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CafFaceLiveness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9BEEF15181D1C283269D0CE9 /* Pods-CafFaceLiveness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CafFaceLiveness.debug.xcconfig"; path = "Target Support Files/Pods-CafFaceLiveness/Pods-CafFaceLiveness.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +27,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE79CBEB68918CF9DA6A1A2 /* Pods_CafFaceLiveness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,34 +41,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1BE8BBC9B5B061514E43FD62 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				80AA0B3CB13F1B5B4123CEDF /* Pods_CafFaceLiveness.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				16D6BB802B44C6BC00A46D2F /* CafFaceLiveness.h */,
-				16D6BB812B44C6BC00A46D2F /* CafFaceLiveness.m */,
-				16D6BB7F2B44C6BC00A46D2F /* CafFaceLiveness.swift */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				FC0CD211591CA6EE9247D0DD /* Pods */,
-				1BE8BBC9B5B061514E43FD62 /* Frameworks */,
-				16D6BB7E2B44C6BC00A46D2F /* react-native-caf-face-liveness-Bridging-Header.h */,
 			);
-			sourceTree = "<group>";
-		};
-		FC0CD211591CA6EE9247D0DD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9BEEF15181D1C283269D0CE9 /* Pods-CafFaceLiveness.debug.xcconfig */,
-				0D8BD9FE572872782E77893B /* Pods-CafFaceLiveness.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,7 +55,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "CafFaceLiveness" */;
 			buildPhases = (
-				D0B094CAC141AF7782B8FF85 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -138,31 +100,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		D0B094CAC141AF7782B8FF85 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CafFaceLiveness-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -288,7 +225,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BEEF15181D1C283269D0CE9 /* Pods-CafFaceLiveness.debug.xcconfig */;
 			buildSettings = {
 				EXCLUDED_ARCHS = "";
 				HEADER_SEARCH_PATHS = (
@@ -309,7 +245,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D8BD9FE572872782E77893B /* Pods-CafFaceLiveness.release.xcconfig */;
 			buildSettings = {
 				EXCLUDED_ARCHS = "";
 				HEADER_SEARCH_PATHS = (
@@ -318,7 +253,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-                IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
