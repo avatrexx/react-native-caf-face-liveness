@@ -8,6 +8,25 @@ Library for React Native
 
 ---
 
+# Minimum Requirements
+
+## Android 
+
+| Settings          | Minimum version |
+| ----------------- | --------------- | 
+| minSdkVersion     | 21              | 
+| compileSdkVersion | 33              | 
+| Java version      | 8               | 
+
+## iOS 
+
+| Settings          | Minimum version |
+| ----------------- | --------------- | 
+| Target            | 12              | 
+| Xcode             | 13.4.1          | 
+
+---
+
 # Getting Started
 
 ```sh
