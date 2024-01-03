@@ -82,7 +82,7 @@ This hook provides `startFaceLiveness` method that start face liveness and your 
 | ----------- | ----------------------- | ------------ | ------------------------------------------------- |
 | mobileToken | string                  | **Required** | Usage token associated with your Identity account |
 | peopleId    | string                  | **Required** | User CPF                                          |
-| options     | [FaceLivenessOptions]() | Optional     | Settings for the liveness                         |
+| options     | [FaceLivenessOptions](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#facelivenessoptions) | Optional     | Settings for the liveness                         |
 
 ### Methods
 
@@ -92,7 +92,7 @@ This hook provides `startFaceLiveness` method that start face liveness and your 
 
 ### Responses
 
-[FaceLivenessResponse]()
+[FaceLivenessResponse](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#facelivenessresponse)
 
 ---
 
@@ -113,9 +113,9 @@ This hook provides `startFaceLiveness` method that start face liveness and your 
 
 | Name                   | Type               | Description                                          |
 | ---------------------- | ------------------ | ---------------------------------------------------- |
-| cafStage               | [StageType]()      | Change the development environment                   |
-| filter                 | [FilterType]()     | Change face liveness mask                            |
-| imageUrlExpirationTime | [TimeType]()       | Change the expiration time of the face liveness url  |
+| cafStage               | [StageType](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#stagetype)      | Change the development environment                   |
+| filter                 | [FilterType](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#filtertype)     | Change face liveness mask                            |
+| imageUrlExpirationTime | [TimeType](https://github.com/avatrexx/react-native-caf-face-liveness/tree/main?tab=readme-ov-file#timetype)       | Change the expiration time of the face liveness url  |
 | enableScreenshots      | boolean            | Toggle user screenshots                              | 
 | loadingScreen          | boolean            | Toggle face liveness loading screen                  |
 
